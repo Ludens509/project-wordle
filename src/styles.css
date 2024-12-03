@@ -230,3 +230,22 @@ h1 {
     transform: translateY(0%);
   }
 }
+/*
+  My own code adding some esthetic
+*/
+.global-guess-input-wrapper {
+  width: 100%;
+  border: 1px solid #e0e0e0; /* Thin gray border */
+  border-radius: 8px; /* Optional: rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow effect */
+  padding: 32px; /* Optional: internal spacing */
+  background-color: white; /* Ensure white background */
+}
+.global-guesses-word-wrapper {
+  width: 100%;
+  border: 1px solid #e0e0e0; /* Thin gray border */
+  border-radius: 8px; /* Optional: rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow effect */
+  padding: 30px; /* Optional: internal spacing */
+  background-color: white; /* Ensure white background */
+}
