@@ -13,7 +13,6 @@ function Cell({ letter, status }) {
 
 function Guess({ value: letter, answer }) {
   const result = checkGuess(letter, answer);
-  console.log(result);
 
   return (<>
 
@@ -22,7 +21,7 @@ function Guess({ value: letter, answer }) {
       {range(5).map((cellIndex) => (
         <Cell key={cellIndex}
           letter={result ? result[cellIndex].letter : undefined}
-          status={result ? result[cellIndex].status : letter} />
+          status={result ? result[cellIndex].status : undefined} />
       )
       )}
     </p>

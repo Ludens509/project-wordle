@@ -3,7 +3,7 @@ import React from 'react';
 // import Guess from '../Guess/Guess';
 // import { checkGuess } from '../../game-helpers';
 
-function GuessInput({ handleSubmit }) {
+function GuessInput({ handleSubmit, gameStatus }) {
 
   const [guesses, setGuesses] = React.useState('');
   // const [previousGuesses, setPreviousGuesses] = React.useState([]);
@@ -32,6 +32,7 @@ function GuessInput({ handleSubmit }) {
         <label htmlFor="guess-input">Enter guess:</label>
         <input
           required
+          disabled={gameStatus !== 'running'}
           id="guess-input"
           type="text"
           value={guesses}
