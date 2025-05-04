@@ -11,8 +11,9 @@ function Cell({ letter, status }) {
   );
 }
 
-function Guess({ value: letter, answer }) {
-  const result = checkGuess(letter, answer);
+function Guess({ value: validatedGuesses }) {
+  const result = validatedGuesses;
+  console.log('result', result);
 
   return (<>
 

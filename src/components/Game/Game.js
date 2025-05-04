@@ -4,7 +4,9 @@ import { WORDS } from '../../data';
 import { sample } from '../../utils';
 import PreviousGuesses from '../PreviousGuesses/PreviousGuesses';
 import { NUM_OF_GUESSES_ALLOWED } from '../../constants';
-import GameBanner from '../GameBanner/GameBanner';
+import GameBanner from '../GameBanner';
+import Keyboard from '../Keyboard';
+import { checkGuess } from '../../game-helpers';
 
 // Pick a random word on every pageload.
 const answer = sample(WORDS);
@@ -27,18 +29,25 @@ function Game() {
 
   }
 
+  const validatedGuesses = previousGuesses.map((guess) => {
+    return checkGuess(guess, answer);
+  });
+
   return <>
     <PreviousGuesses
-      guesses={previousGuesses}
+      validatedGuesses={validatedGuesses}
       answer={answer}
     />
     <GuessInput
       handleSubmit={handleSubmit}
       gameStatus={gameStatus}
     />
-    <GameBanner 
-      gameStatus={gameStatus} 
-      answer={answer} 
+    <Keyboard
+      validatedGuesses={validatedGuesses}
+    />
+    <GameBanner
+      gameStatus={gameStatus}
+      answer={answer}
       qteOfGuess={previousGuesses.length} />
   </>;
 }
