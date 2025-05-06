@@ -180,9 +180,33 @@ h1 {
   background: var(--color-success);
   color: white;
 }
+.happy-banner-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
 .sad.banner {
   background: var(--color-error);
   color: white;
+}
+
+.sad-banner-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.play-again-btn-wrapper {
+  display: flex;
+  background: white;
+  opacity: 50%;
+  padding: 6px;
+  border-radius: 100%;
+}
+
+.play-again-btn {
+  color: initial;
+  margin: 0 auto;
 }
 
 .visually-hidden {
@@ -205,24 +229,26 @@ h1 {
 }
 
 .keyboard-bg {
-  margin: 14px;
+  margin: 15px;
 }
 .keyboard-key {
   font-weight: bold;
   background-color: var(--color-gray-900);
-  padding: 16px;
-  margin: 2px;
+  box-shadow: 0 4px 6px rgba(148, 140, 140, 0.1);
+  border: 2px solid var(--color-gray-900);
+  padding: 15px;
+  margin: 3px;
   border-radius: 6px;
 }
 .keyboard-key.correct {
   /* background: var(--color-success); */
-  background-color: green;
-  border-color: var(--color-success);
+  background-color: var(--color-success);
+  border-color: green;
   color: white;
 }
 .keyboard-key.incorrect {
   background: var(--color-gray-300);
-  border-color: var(--color-gray-300);
+  border-color: gray;
   color: white;
 }
 .keyboard-key.misplaced {

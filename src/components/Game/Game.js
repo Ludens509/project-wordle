@@ -9,13 +9,21 @@ import Keyboard from '../Keyboard';
 import { checkGuess } from '../../game-helpers';
 
 // Pick a random word on every pageload.
-const answer = sample(WORDS);
+// const answer = sample(WORDS);
 // To make debugging easier, we'll log the solution in the console.
-console.info({ answer });
+// console.info({ answer });
 
 function Game() {
   const [gameStatus, setGameStatus] = React.useState('running');
+  const [answer, setAnswer] = React.useState(() => sample(WORDS));
   const [previousGuesses, setPreviousGuesses] = React.useState([]);
+
+  const handleRestart = () => {
+    const newAswer = answer;
+    setAnswer(newAswer);
+    setGameStatus('running');
+    setPreviousGuesses([]);
+  }
 
   const handleSubmit = (guesses) => {
 
@@ -48,7 +56,8 @@ function Game() {
     <GameBanner
       gameStatus={gameStatus}
       answer={answer}
-      qteOfGuess={previousGuesses.length} />
+      qteOfGuess={previousGuesses.length}
+      restartGame={handleRestart} />
   </>;
 }
 

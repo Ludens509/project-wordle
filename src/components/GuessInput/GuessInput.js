@@ -27,7 +27,7 @@ function GuessInput({ handleSubmit, gameStatus }) {
     {/* <Guess guesses={previousGuesses} /> */}
     {/* <PreviousGuesses guessSubmit={previousGuesses} /> */}
 
-    <div className='global-guess-input-wrapper'>
+    <div className=''>
       <form className="guess-input-wrapper" onSubmit={InputHandler}>
         <label htmlFor="guess-input">Enter guess:</label>
         <input

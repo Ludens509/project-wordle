@@ -42,7 +42,7 @@ function getStatusByLetter(validatedGuesses) {
 
 function Key({ char, status }) {
 
-  const className = status ? `keyboard-key ${status}` : 'keyboard-key';
+  const className = status ? `global-guess-word-wrapper keyboard-key ${status}` : 'keyboard-key';
   return (
     <span className={className}>{char}</span>
   );
