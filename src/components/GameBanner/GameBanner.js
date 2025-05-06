@@ -2,7 +2,7 @@ import React from 'react';
 
 function GameBanner({ gameStatus, answer, qteOfGuess, restartGame }) {
 
-  const btnColor = gameStatus === 'won' ? '--color-success' : '--color-error';
+  const btnColor = gameStatus === 'won' ? 'var(--color-success)' : 'var(--color-error)';
 
   if (gameStatus === 'won') {
     return (
